@@ -193,10 +193,11 @@ def train(args):
 
         iteration += 1
         
-        # Save model
-        save_out_path = os.path.join(
-            models_dir, "md_{}_iters.h5".format(iteration))
-        model.save(save_out_path)
+        # Save model. To save space only if iteration is divisible by 100.
+        if iteration % 100 == 0:
+            save_out_path = os.path.join(
+                models_dir, "md_{}_iters.h5".format(iteration))
+            model.save(save_out_path)
 
         # Stop training when maximum iteration achieves
         if iteration == 50001:
