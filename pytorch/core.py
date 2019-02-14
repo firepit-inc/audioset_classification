@@ -49,7 +49,7 @@ def evaluate(model, input, target, stats_dir, probs_dir, iteration):
 
     Args:
       model: object
-      output: 2d array, (samples_num, classes_num)
+      output: 2d array, (samples_num, classes_num)  # <-- this should probably say input
       target: 2d array, (samples_num, classes_num)
       stats_dir: str, directory to write out statistics.
       probs_dir: str, directory to write out output (samples_num, classes_num)
